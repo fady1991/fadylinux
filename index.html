@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#080c10">
+
+<title>Fady Linux</title>
+
+<style>
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #080c10;
+    color: #f1f5f9;
+}
+
+.navbar {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(8,12,16,.96);
+    border-bottom: 1px solid #202a33;
+    padding: 14px;
+}
+
+.logo {
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+    color: #00e676;
+    margin-bottom: 12px;
+}
+
+.menu {
+    display: flex;
+    gap: 8px;
+    overflow-x: auto;
+}
+
+.menu button {
+    flex: 0 0 auto;
+    border: 1px solid #26333d;
+    background: #111820;
+    color: white;
+    padding: 10px 14px;
+    border-radius: 10px;
+}
+
+.menu button:hover {
+    background: #00a86b;
+}
+
+.hero {
+    min-height: 70vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 35px 20px;
+    background:
+        radial-gradient(circle at top, #12352a 0%, #080c10 55%);
+}
+
+.penguin {
+    font-size: 70px;
+}
+
+.hero h1 {
+    font-size: 36px;
+}
+
+.green {
+    color: #00e676;
+}
+
+.hero p {
+    color: #aab7c4;
+    line-height: 1.8;
+}
+
+.main-btn {
+    margin-top: 20px;
+    padding: 14px 25px;
+    border: none;
+    border-radius: 12px;
+    background: #00c853;
+    color: white;
+    font-size: 17px;
+    font-weight: bold;
+}
+
+section {
+    padding: 35px 18px;
+    max-width: 800px;
+    margin: auto;
+}
+
+.title {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.title h2 {
+    font-size: 28px;
+}
+
+.title p {
+    color: #94a3b8;
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 15px;
+}
+
+.card {
+    background: #111820;
+    border: 1px solid #202c36;
+    border-radius: 16px;
+    padding: 22px;
+}
+
+.card-icon {
+    font-size: 32px;
+}
+
+.card p {
+    color: #aab7c4;
+    line-height: 1.7;
+}
+
+.terminal {
+    background: #050708;
+    border: 1px solid #26333d;
+    border-radius: 15px;
+    overflow: hidden;
+    direction: ltr;
+    text-align: left;
+}
+
+.terminal-top {
+    background: #151c22;
+    padding: 10px;
+    color: #94a3b8;
+}
+
+.terminal-body {
+    padding: 18px;
+    color: #00e676;
+    font-family: monospace;
+    line-height: 1.8;
+}
+
+footer {
+    text-align: center;
+    padding: 30px 15px;
+    border-top: 1px solid #202a33;
+    color: #718096;
+}
+
+@media (max-width: 600px) {
+    .hero h1 {
+        font-size: 31px;
+    }
+
+    .menu {
+        justify-content: flex-start;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<nav class="navbar">
+
+<div class="logo">
+🐧 Fady Linux
+</div>
+
+<div class="menu">
+<button onclick="go('home')">الرئيسية</button>
+<button onclick="go('linux')">Linux</button>
+<button onclick="go('commands')">الأوامر</button>
+<button onclick="go('termux')">Termux</button>
+</div>
+
+</nav>
+
+<header class="hero" id="home">
+
+<div class="penguin">🐧</div>
+
+<h1>
+أهلاً بك في
+<span class="green">Fady Linux</span>
+</h1>
+
+<p>
+موقع تعليمي لتعلم Linux وTerminal وTermux من الهاتف.
+</p>
+
+<button class="main-btn" onclick="go('linux')">
+ابدأ التعلم 🚀
+</button>
+
+</header>
+
+<section id="linux">
+
+<div class="title">
+<h2>🐧 ما هو Linux؟</h2>
+<p>تعرف على نظام التشغيل مفتوح المصدر</p>
+</div>
+
+<div class="cards">
+
+<div class="card">
+<div class="card-icon">💻</div>
+<h3>نظام تشغيل</h3>
+<p>
+Linux هو نظام تشغيل مفتوح المصدر
+يستخدم في الحواسيب والخوادم والعديد من الأجهزة.
+</p>
+</div>
+
+<div class="card">
+<div class="card-icon">🔓</div>
+<h3>مفتوح المصدر</h3>
+<p>
+يمكن دراسة الكود المصدري وتطويره
+واستخدام توزيعات Linux المختلفة.
+</p>
+</div>
+
+<div class="card">
+<div class="card-icon">⚙️</div>
+<h3>Terminal</h3>
+<p>
+يمكن التحكم في النظام باستخدام الأوامر
+من خلال الطرفية Terminal.
+</p>
+</div>
+
+</div>
+
+</section>
+
+<section id="commands">
+
+<div class="title">
+<h2>⌨️ أوامر Linux</h2>
+<p>أوامر أساسية للمبتدئين</p>
+</div>
+
+<div class="terminal">
+
+<div class="terminal-top">
+Terminal
+</div>
+
+<div class="terminal-body">
+$ pwd<br>
+$ ls<br>
+$ cd folder<br>
+$ mkdir test<br>
+$ touch file.txt
+</div>
+
+</div>
+
+</section>
+
+<section id="termux">
+
+<div class="title">
+<h2>📱 Termux</h2>
+<p>تعلم Linux من هاتف Android</p>
+</div>
+
+<div class="card">
+
+<div class="card-icon">📱</div>
+
+<h3>Linux على هاتفك</h3>
+
+<p>
+Termux يوفر بيئة طرفية على Android،
+ويمكنك من خلالها تعلم أوامر Linux
+وتشغيل Python وإنشاء مواقع ويب.
+</p>
+
+</div>
+
+</section>
+
+<footer>
+
+<p>🐧 Fady Linux</p>
+<p>تعلم • جرّب • طوّر</p>
+<p>© 2026</p>
+
+</footer>
+
+<script>
+
+function go(id) {
+    document.getElementById(id).scrollIntoView({
+        behavior: "smooth"
+    });
+}
+
+</script>
+
+</body>
+</html>
